@@ -1,3 +1,3 @@
-import People from '@/app/components/People/People'
+import PeopleList from '@/app/components/People/People'
 
-export { People }
+export { PeopleList }
