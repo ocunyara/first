@@ -8,7 +8,6 @@ import {
   SSRMultipartLink,
 } from "@apollo/experimental-nextjs-app-support";
 
-
 const TOKEN = process.env.CONTENTFUL_ACCESS_TOKEN,
       SPACE = process.env.CONTENTFUL_SPACE_ID,
       URL = `https://graphql.contentful.com/content/v1/spaces/369189qp2jl8`;
