@@ -1,9 +1,17 @@
 'use client'
 import { useEffect, useState } from 'react';
 
+interface PersonProps {
+  first_name: string,
+  last_name: string
+  email: string
+  id: number
+  age: number
+}
+
 const PeopleList = () => {
-  const [people, setPeople] = useState([]);
-  const [error, setError] = useState(null);
+  const [people, setPeople] = useState<PersonProps[]>([]);
+  const [error, setError] = useState<string | null>(null);
 
   useEffect(() => {
     // Function to fetch data from the API
@@ -22,8 +30,6 @@ const PeopleList = () => {
 
     fetchPeople();
   }, []);
-
-  console.log(people)
 
   if (error) return <div>Error: {error}</div>;
   if (people.length === 0) return <div>Loading...</div>;
