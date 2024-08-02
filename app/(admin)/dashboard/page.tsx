@@ -1,4 +1,10 @@
+import { Suspense } from "react";
+import { PeopleList } from "../../components/People";
 
 export default function Page() {
-  return <div>asdasdasd</div>
+  return <>
+    <Suspense fallback={"Loading..."}>
+      <PeopleList />
+    </Suspense>
+  </>
 }

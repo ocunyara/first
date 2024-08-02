@@ -1,13 +1,6 @@
 'use client'
-import { useActionState } from 'react';
-import { authenticate } from '@/lib/actions';
-import { redirect } from "next/navigation";
 
-const Logon = async () => {
-  const [errorMessage, formAction, isPending] = useActionState(
-    authenticate,
-    undefined,
-  );
+const Login = async () => {
 
   return <div className="m-auto container flex justify-center items-center py-12 px-4 sm:px-6 2xl:px-0">
     <div className="flex flex-col lg:flex-row justify-center items-center space-y-6 lg:space-y-0">
@@ -19,7 +12,7 @@ const Logon = async () => {
           <p className="text-base leading-6 text-gray-600 dark:text-white">It is a long established fact that a reader
             will be distracted by the readable content of a page when looking at its layout.</p>
         </div>
-        <form action={formAction}>
+        <form>
           <div className="xl:mt-12 mt-6 w-full">
             <input
               className="focus:outline-none focus:ring-2 focus:ring-gray-600 focus:ring-offset-2 pb-1 border border-gray-600 w-full h-12 sm:w-96 md:w-full lg:w-72 px-4 text-base leading-4 text-gray-600 placeholder-gray-600 dark:placeholder-white dark:bg-transparent dark:border-white dark:text-white"
@@ -32,7 +25,7 @@ const Logon = async () => {
           </div>
           <div className="xl:mt-4 mt-6 w-full">
             <button
-              type='submit' aria-disabled={isPending}
+              type='submit'
               className="hover:bg-gray-600 focus:outline-none focus:ring-2 focus:ring-gray-800 focus:ring-offset-2 h-12 w-full sm:w-96 md:w-full lg:w-72 bg-gray-800 text-base font-medium leading-4 text-white dark:bg-white dark:text-gray-900 dark:bg-gray-100 dark:hover:bg-gray-200 dark:hover:text-gray-900">Subscribe
             </button>
           </div>
@@ -41,11 +34,7 @@ const Logon = async () => {
             aria-live="polite"
             aria-atomic="true"
           >
-            {errorMessage && (
-              <>
-                <p className="text-sm text-red-500">{errorMessage}</p>
-              </>
-            )}
+
           </div>
         </form>
       </div>
@@ -78,4 +67,4 @@ const Logon = async () => {
   </div>
 }
 
-export default Logon
+export default Login

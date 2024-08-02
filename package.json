@@ -1,0 +1,47 @@
+{
+  "name": "first",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "lint": "next lint"
+  },
+  "dependencies": {
+    "@apollo/client": "^3.10.5",
+    "@apollo/experimental-nextjs-app-support": "^0.11.2",
+    "@contentful/rich-text-react-renderer": "^15.22.7",
+    "@heroicons/react": "^2.1.5",
+    "@vercel/postgres": "^0.9.0",
+    "apollo-server-micro": "^3.13.0",
+    "autoprefixer": "^10.4.19",
+    "bcrypt": "^5.1.1",
+    "contentful": "^10.11.7",
+    "contentful-management": "^11.27.5",
+    "graphql": "^16.8.2",
+    "graphql-tag": "^2.12.6",
+    "jose": "^5.6.3",
+    "next": "14.2.3",
+    "next-auth": "^5.0.0-beta.20",
+    "react": "^18",
+    "react-cookie": "^7.1.4",
+    "react-dom": "^18",
+    "swiper": "^11.1.4",
+    "zod": "^3.23.8"
+  },
+  "devDependencies": {
+    "@graphql-codegen/cli": "^5.0.2",
+    "@graphql-codegen/typescript": "^4.0.7",
+    "@graphql-codegen/typescript-operations": "^4.2.1",
+    "@graphql-codegen/typescript-react-apollo": "^4.3.0",
+    "@types/node": "^20",
+    "@types/react": "^18",
+    "@types/react-dom": "^18",
+    "eslint": "^8",
+    "eslint-config-next": "14.2.3",
+    "postcss": "^8.4.39",
+    "tailwindcss": "^3.4.4",
+    "typescript": "^5"
+  }
+}
