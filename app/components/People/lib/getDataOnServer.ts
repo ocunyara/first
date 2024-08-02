@@ -4,3 +4,9 @@ export const getPerson = async () => {
 
   return res.json();
 }
+
+export const deletePerson = async (ID: number) => {
+  const res = await fetch(`${process.env.PUBLICK_URL}/api/delete-people${ID}`);
+
+  return res.json();
+}

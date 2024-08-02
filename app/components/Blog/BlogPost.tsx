@@ -39,7 +39,7 @@ const BlogPost = ({ slug }: ProjectsCollectionProps) => {
       />
       <h2 className="text-center text-3xl lg:text-5xl tracking-wider text-gray-900 my-10 mx-auto max-w-[800px]">{data.blogCollection.items[0].title}</h2>
       <div className='m-auto max-w-[1080px] text-lg'>
-        {/*<RichText {...data.blogCollection.items[0].description.json} />*/}
+        <RichText {...data.blogCollection.items[0].description.json} />
       </div>
     </div>
   );
