@@ -1,9 +1,9 @@
 import { Suspense } from "react";
-import { PeopleClient } from "../../components/People";
+import { PeopleListSSR } from "../../components/People";
 export default function Page() {
   return <>
     <Suspense fallback={"Loading..."}>
-      <PeopleClient />
+      <PeopleListSSR />
     </Suspense>
   </>
 }

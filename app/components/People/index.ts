@@ -1,4 +1,5 @@
-import PeopleList from '@/app/components/People/People'
-import PeopleClient from '@/app/components/People/PeopleClient'
+import PeopleListSSR from './PeopleListSSR'
+import PeopleListClient from './PeopleListClient'
+import PeopleItem from '@/app/components/People/PeopleItem'
 
-export { PeopleList, PeopleClient }
+export { PeopleListSSR, PeopleListClient, PeopleItem }
