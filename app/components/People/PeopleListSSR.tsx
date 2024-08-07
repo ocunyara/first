@@ -1,22 +1,13 @@
 'use server'
 
 import { getPerson } from '@/app/components/People/lib/getDataOnServer'
-import {PeopleItem} from "./index";
-
-interface PersonProps {
-  rows: {
-    first_name: string,
-    last_name: string
-    email: string
-    id: number
-    age: number
-  }[]
-}
-
+import { PeopleItem } from "./index";
+import AddNewPeople from "./AddNewPeople";
+import { PersonListProps } from "./PeopleItem.types";
 
 // SSR component
 const PeopleListSSR = async () => {
-  const data: PersonProps = await getPerson();
+  const data: PersonListProps = await getPerson();
 
   return (
     <div className="container mx-auto">
@@ -26,6 +17,7 @@ const PeopleListSSR = async () => {
           <PeopleItem {...person} />
         ))}
       </ul>
+      <AddNewPeople />
     </div>
   );
 };
