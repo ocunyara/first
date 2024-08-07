@@ -1,6 +1,6 @@
 'use client'
 
-import { useEffect, useState } from 'react'
+import { useState } from 'react'
 import { PersonProps } from "./PeopleItem.types";
 
 const AddNewPeople = () => {
@@ -13,17 +13,17 @@ const AddNewPeople = () => {
   });
   const [message, setMessage] = useState<string>('')
 
-  function handleChange(e) {
+  function handleChange(event: React.ChangeEvent<HTMLInputElement>) {
     setFormData({
       ...formData,
-      [e.target.name]: e.target.value
+      [event.target.name]: event.target.value
     });
   }
 
-  function handleSubmit(a: React.FormEvent) {
-    e.preventDefault()
+  function handleSubmit(event: React.FormEvent) {
+    event.preventDefault()
 
-    fetchPeople();
+    addNewPerson();
 
     setFormData(
       {
@@ -35,13 +35,11 @@ const AddNewPeople = () => {
     )
   }
 
-  const fetchPeople = async () => {
-    console.log(123123)
+  const addNewPerson = async () => {
     try {
       const response = await fetch(`/api/add-people?firstName=${formData.first_name}&lastName=${formData.last_name}&age=${formData.age}&email=${formData.email}`);
       const data = await response.json();
-
-      data.people.fields.length ? setMessage('Person added') : setMessage('Something wrong')
+      setMessage(data.message)
       console.log(data)
     } catch (error: unknown) {
       console.log(error)

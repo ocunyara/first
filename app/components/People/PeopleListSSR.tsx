@@ -2,8 +2,8 @@
 
 import { getPerson } from '@/app/components/People/lib/getDataOnServer'
 import { PeopleItem } from "./index";
-import AddNewPeople from "./AddNewPeople";
 import { PersonListProps } from "./PeopleItem.types";
+import AddNewPeople from "./AddNewPeople";
 
 // SSR component
 const PeopleListSSR = async () => {

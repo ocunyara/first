@@ -1,14 +1,21 @@
 import { sql } from '@vercel/postgres';
 import { NextResponse } from 'next/server';
 
-export async function GET(peopleID: number) {
-  try {
-    // Delete the person with id 1 from the database
-    await sql`DELETE FROM People WHERE id = ?#{[0].property}`;
+export async function GET(request: Request) {
+  const { searchParams } = new URL(request.url);
+  const ID = searchParams.get('ID');
 
-    // Return a success message
-    return NextResponse.json({ message: `Person with id ${peopleID} deleted successfully` }, { status: 200 });
-  } catch (error: any) {
-    return NextResponse.json({ error: error.message }, { status: 500 });
+  try {
+    if (!ID) throw new Error('ID is required');
+    await sql`DELETE FROM People WHERE id = ${ID};`;
+  } catch (error: unknown) {
+    let errorMessage = 'An unexpected error occurred';
+    if (error instanceof Error) {
+      errorMessage = error.message;
+    }
+    return NextResponse.json({ error: errorMessage }, { status: 500 });
   }
+
+  const message = 'Person removed';
+  return NextResponse.json({ message }, { status: 200 });
 }
