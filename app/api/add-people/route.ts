@@ -10,7 +10,7 @@ export async function GET(request: Request) {
 
   try {
     if (!firstName || !lastName) throw new Error('First name and last name are required');
-    await sql`INSERT INTO People (first_name, last_name, age, email) VALUES (${firstName}, ${lastName}, ${age}, ${email});`;
+    await sql`INSERT INTO People (, last_name, age, email) VALUES (${firstName}, ${lastName}, ${age}, ${email});`;
   } catch (error: any) {
     return NextResponse.json({ error: error.message }, { status: 500 });
   }
